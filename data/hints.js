@@ -1,8 +1,7 @@
 const hints = {
   1: `Each hexadecimal digit represents four binary bits, 
         and a bytes2 consists of sixteen bits. 
-        It requires four hexadecimal digits to represent all possible values. 
-        In hexadecimal notation, values range from 0x0000 to 0xFFFF.`,
+        It requires four hexadecimal digits to represent all possible values.`,
   2: `Interact with the contract using Remix, 
   and remember that the fallback function is executed on a call to the contract if none of the other functions 
   match the given function signature or if no data was supplied at all and there is no receive Ether function.
