@@ -12,6 +12,7 @@
   },
   "keywords": [],
   "dependencies": {
+    "@vercel/node": "^3.2.27",
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
     "ethers": "^6.13.4",
