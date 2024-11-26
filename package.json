@@ -6,6 +6,9 @@
   "main": "server.js",
   "author": "Matan Cohen",
   "license": "BSD-4-Clause",
+  "engines": {
+    "node": "18.x"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
@@ -19,4 +22,3 @@
     "express": "^4.21.1"
   }
 }
-
