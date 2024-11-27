@@ -1,8 +1,8 @@
 const express = require('express');
 const cors = require('cors');
-const signRoute = require('../routes/signRoute');
-const hintRoute = require('../routes/hintRoute');
-const solutionRoute = require('../routes/solutionRoute');
+const signRoute = require('./routes/signRoute');
+const hintRoute = require('./routes/hintRoute');
+const solutionRoute = require('./routes/solutionRoute');
 
 require('dotenv').config();
 
