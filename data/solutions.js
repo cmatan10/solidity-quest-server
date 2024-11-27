@@ -308,3 +308,4 @@ contract Result {
 };
 
 module.exports = { solutions };
+

@@ -43,3 +43,4 @@ const getHint = async (req, res) => {
 };
 
 module.exports = { getHint };
+

@@ -29,3 +29,4 @@ const hints = {
 };
 
 module.exports = { hints };
+

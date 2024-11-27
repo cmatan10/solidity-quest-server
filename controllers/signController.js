@@ -38,3 +38,4 @@ const signMessage = async (req, res) => {
 };
 
 module.exports = { signMessage };
+
