@@ -1,0 +1,17 @@
+{
+  "dependencies": {
+    "@nomicfoundation/hardhat-verify": "^2.0.11",
+    "@nomiclabs/hardhat-etherscan": "^3.1.8",
+    "@openzeppelin/hardhat-upgrades": "^3.5.0",
+    "@safe-global/safe-deployments": "^1.37.14",
+    "dotenv": "^16.4.5",
+    "ethers": "^6.13.4"
+  },
+  "devDependencies": {
+    "@buildwithsygma/sygma-sdk-core": "^2.11.2",
+    "@nomicfoundation/hardhat-toolbox": "^5.0.0",
+    "@openzeppelin/contracts": "^5.1.0",
+    "@openzeppelin/contracts-upgradeable": "^5.1.0",
+    "hardhat": "^2.22.15"
+  }
+}

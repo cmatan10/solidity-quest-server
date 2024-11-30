@@ -1,0 +1,69 @@
+{
+	"compiler": {
+		"version": "0.8.28+commit.7893614a"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_target",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "attacker",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "ticketAmount",
+						"type": "uint256"
+					}
+				],
+				"name": "attack",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			".deps/contracts/Games/LimitedTickets.sol": "HacklimitedTickets"
+		},
+		"evmVersion": "cancun",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": true,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		".deps/contracts/Games/LimitedTickets.sol": {
+			"keccak256": "0x1ab591611bdf5e340977e1e517d8c1a630f39708a13b2bd8a6b4bce86256f9dd",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://5a855db88557619ee97808374756fbdfe221124cb5eb480852457ebcefe14b39",
+				"dweb:/ipfs/QmZsTEKZu8vH1w3UUUhJDoXekkKDzX5Trh4nDxHKiwhD12"
+			]
+		}
+	},
+	"version": 1
+}
