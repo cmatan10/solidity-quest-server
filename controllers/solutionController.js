@@ -1,5 +1,5 @@
 const { ethers } = require('ethers');
-const { solutions } = require('../data/solutions');
+const Solution = require('../models/Solution');
 const ERC20_ABI = require('../data/SolidityQuestCoin.json');
 
 const ERC20_ADDRESS = process.env.ERC20_CONTRACT_ADDRESS; 
@@ -11,8 +11,8 @@ const getSolution = async (req, res) => {
     return res.status(400).json({ error: 'Invalid wallet address' });
   }
 
-  if (!solutions[solutionId]) {
-    return res.status(404).json({ error: 'solution not found' });
+  if (!solutionId) {
+    return res.status(400).json({ error: 'Solution ID is required' });
   }
 
   let rpcUrl;
@@ -30,10 +30,16 @@ const getSolution = async (req, res) => {
 
     const bought = await ERC20Contract.solutions(walletAddress, solutionId);
     if (!bought) {
-      return res.status(403).json({ error: 'solution not purchased yet' });
+      return res.status(403).json({ error: 'Solution not purchased yet' });
     }
 
-    res.json({ solution: solutions[solutionId] });
+    const solution = await Solution.findOne({ solutionId: solutionId });
+
+    if (!solution) {
+      return res.status(404).json({ error: 'Solution not found' });
+    }
+
+    res.json({ solution: solution.description });
   } catch (error) {
     console.error('Error fetching solution:', error);
     res.status(500).json({ error: 'Internal server error' });
@@ -41,4 +47,3 @@ const getSolution = async (req, res) => {
 };
 
 module.exports = { getSolution };
-
