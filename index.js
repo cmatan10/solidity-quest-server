@@ -38,3 +38,4 @@ mongoose.connect(mongoURI)
   });
 
 module.exports = app;
+
