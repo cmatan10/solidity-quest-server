@@ -49,13 +49,16 @@ const compileCode = (req, res) => {
         abi: contracts[contractName].abi,
         bytecode: contracts[contractName].evm.bytecode.object,
       };
+      
     }
 
     if (Object.keys(compiledContracts).length === 0) {
       return res.status(400).json({ error: 'No contracts were compiled from the provided code.' });
     }
+    console.log(compiledContracts);
 
     res.json(compiledContracts);
+    
   } catch (error) {
     console.error('Compilation error:', error);
     res.status(500).json({ error: 'Compilation failed due to an internal error.' });
