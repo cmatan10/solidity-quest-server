@@ -38,7 +38,7 @@ const getSolution = async (req, res) => {
     if (!solution) {
       return res.status(404).json({ error: 'Solution not found' });
     }
-
+    
     res.json({ solution: solution.description });
   } catch (error) {
     console.error('Error fetching solution:', error);
