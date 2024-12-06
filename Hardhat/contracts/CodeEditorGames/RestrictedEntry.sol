@@ -10,6 +10,8 @@ contract RestrictedEntry {
             countAccessRequests(msg.sender) < MAX_ENTRIES_ALLOWED,
             "Entry limit exceeded for sender"
         );
+        require((msg.sender).code.length > 0, "no eoa wallet allowed");
+
         entrants.push(entrant);
     }
 
