@@ -24,7 +24,7 @@ contract MainContract {
         require(success, "Delegatecall failed");
     }
 
-    function delegateSetOwner(address _newOwner) public {
+    function SetOwner(address _newOwner) public {
         require(msg.sender == owner, "Caller is not the owner");
         bytes memory data = abi.encodeWithSignature("setOwner(address)", _newOwner);
         (bool success,) = address(helper).delegatecall(data);
