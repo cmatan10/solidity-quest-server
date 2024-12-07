@@ -32,7 +32,7 @@ contract WaitingList {
     }
 }
 
-contract Attack {
+contract OverFlow {
     function attack(address _addr) public {
         unchecked {
             WaitingList(_addr).laterDate(

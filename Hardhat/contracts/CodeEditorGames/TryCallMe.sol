@@ -11,7 +11,7 @@ contract TryCallMe {
     }
 }
 
-contract trying {
+contract Trying {
     constructor(address _target) {
         TryCallMe(_target).TryToCall();
     }

